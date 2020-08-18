@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+}
+
+group 'me.yourname'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile fileTree(dir: 'jars', include: '*.jar')
+}
+
+sourceSets {
+    main.java.srcDirs = ['src/mscp-1.16.2', 'src/1.16.2/server', 'src/1.16.2/client']
+    test.java.srcDirs = ['src/mscp-1.16.2/test']
+    main.resources.srcDirs = ['src/mscp-1.16.2/assets']
+    test.resources.srcDirs = ['src/mscp-1.16.2/test/assets']
+}
